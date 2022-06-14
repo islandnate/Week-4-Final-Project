@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Man</title>
     <link rel="stylesheet" href="./styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -29,8 +29,8 @@
             <div class="search__row">
                 <span class="search__bar--title">Browse Movies</span>
                 <div class="search__bar--container">
-                    <input type="text" class="search__bar">
-                    <button class="btn__search">
+                    <input type="search" class="search__bar">
+                    <button class="btn__search" onclick="search()">
                         <i class="fab fa-searchengin"></i>
                     </button>
                 </div>
@@ -40,44 +40,10 @@
     <section id="movies-and-search">
         <div class="container">
             <div class="movies__row">
-                <span class="search__results">Search Results:</span>
+                <span class="search__results">Search Results: </span>
                 <div class="movies_search--results">
-                    <div class="movies">
-                        <div class="movie">
-                            <img src="https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg" alt="" class="movie__img">
-                            <div class="movie__description">
-                                <div class="movie__title">Fast & Furious 6</div>
-                                <div class="movie__year"> 2013</div>
-                            </div>
-                        </div>
-                        <div class="movie">
-                            <img src="https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg" alt="" class="movie__img">
-                            <div class="movie__description">
-                                <div class="movie__title">Fast & Furious 6</div>
-                                <div class="movie__year"> 2013</div>
-                            </div>
-                        </div>
-                        <div class="movie">
-                            <img src="https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg" alt="" class="movie__img">
-                            <div class="movie__description">
-                                <div class="movie__title">Fast & Furious 6</div>
-                                <div class="movie__year"> 2013</div>
-                            </div>
-                        </div>
-                        <div class="movie">
-                            <img src="https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg" alt="" class="movie__img">
-                            <div class="movie__description">
-                                <div class="movie__title">Fast & Furious 6</div>
-                                <div class="movie__year"> 2013</div>
-                            </div>
-                        </div>
-                        <div class="movie">
-                            <img src="https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg" alt="" class="movie__img">
-                            <div class="movie__description">
-                                <div class="movie__title">Fast & Furious 6</div>
-                                <div class="movie__year"> 2013</div>
-                            </div>
-                        </div>
+                    <div class="movies__container">
+                        
                     </div>
                 </div>
             </div>
