@@ -1,9 +1,9 @@
 // https://www.omdbapi.com/?i=tt3896198&apikey=954794aa
 
 const movieListEl = document.querySelector('.movies__container')
-const searchBar = document.querySelector('.search__bar')
-const searchBtn = document.querySelector('.btn__search')
-let searchResults = document.getElementsByClassName('.search__results')
+const searchBar = document.querySelector('input[type="search"]')
+const searchBtn = document.getElementsByClassName('.btn__search')
+let searchResults = document.querySelector('.search__results')
 let moviesArr = []
 
 
@@ -14,6 +14,13 @@ async function main() {
     const moviesSearch = moviesData.Search
     movieListEl.innerHTML = moviesSearch.map((movie) => movieHTML(movie)).join("")
     
+          
+       
+}
+
+main()
+
+const getMovies = async () => {    
     searchBar.addEventListener('keyup', async (e) => {
             if(e.key === 'Enter'){
                 const searchString = e.target.value.toLowerCase()
@@ -21,24 +28,23 @@ async function main() {
                 moviesNewData = await moviesNew.json()
                 const moviesNewSearch = moviesNewData.Search
                 movieListEl.innerHTML = moviesNewSearch.map((movie) => movieHTML(movie)).join("")
-
-            }    
-    })       
-       
+                searchResults.innerHTML = `Search Results for: "${searchString}"`
+            }
+    }) 
 }
 
-main()
+getMovies()
+
+async function search(){
+    const moviesNew = await fetch(`https://omdbapi.com/?apikey=d3ff36ad&s=${searchBar.value}`)
+    moviesNewData = await moviesNew.json()
+    const moviesNewSearch = moviesNewData.Search
+    movieListEl.innerHTML = moviesNewSearch.map((movie) => movieHTML(movie)).join("")
+    searchResults.innerHTML = ` Search Results for: "${searchBar.value}"`
+}
 
 
-    searchBtn.addEventListener('Click', async (e) => {
-        if(e.key === 'Click'){
-            const searchString = e.target.value.toLowerCase()
-            const moviesNew = await fetch(`https://omdbapi.com/?apikey=d3ff36ad&s=${searchString}`)
-            moviesNewData = await moviesNew.json()
-            const moviesNewSearch = moviesNewData.Search
-            movieListEl.innerHTML = moviesNewSearch.map((movie) => movieHTML(movie)).join("")
 
-        }})   
 
 function movieHTML(movie){
     return `<div class="movie">
